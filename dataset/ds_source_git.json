@@ -1,0 +1,27 @@
+{
+	"name": "ds_source_git",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_gitingest",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"p_file": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": {
+					"value": "anshlambagit/Uber_Data_Engineer_Project/refs/heads/main/Data/@{dataset().p_file}",
+					"type": "Expression"
+				}
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
